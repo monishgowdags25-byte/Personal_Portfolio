@@ -339,7 +339,7 @@ export default function App() {
                 <div className="absolute inset-0 opacity-30 bg-gradient-to-tr from-accent/10 via-transparent to-purple-500/5 blur-xl pointer-events-none" />
 
                 {/* Portrait Image */}
-                <div className="relative w-[85%] h-[75%] rounded-2xl overflow-hidden border border-border-custom bg-black/40">
+                <div className="relative w-[72%] h-[85%] rounded-2xl overflow-hidden border border-border-custom bg-black/40">
                   <img 
                     src="/src/assets/about_avatar.png" 
                     alt="Creative Developer HUD Visual" 
