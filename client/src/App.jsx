@@ -250,13 +250,13 @@ export default function App() {
             </div>
           </div>
 
-          {/* Central Block: Interactive 3D Spline / Portrait card (Columns 5-8) */}
-          <div className="md:col-span-4 z-10 w-full relative">
+          {/* Central Block: Interactive 3D Spline / Portrait card (Columns 5-9) */}
+          <div className="md:col-span-5 z-10 w-full relative">
             <CreativeHeroVisual splineUrl={splineSceneUrl} />
           </div>
 
-          {/* Right Block: Stats visual card links (Columns 9-12) */}
-          <div className="md:col-span-4 z-20 self-end md:justify-self-end w-full max-w-[240px]">
+          {/* Right Block: Stats visual card links (Columns 10-12) */}
+          <div className="md:col-span-3 z-20 self-end md:justify-self-end w-full max-w-[240px]">
             <a 
               href="#projects"
               className="group block bento-card bg-bg-card/75 backdrop-blur-md p-6 rounded-3xl border border-border-custom hover:border-accent flex flex-col justify-between h-40 shadow-2xl relative overflow-hidden transition-all duration-300 hover:-translate-y-1 active:scale-98"

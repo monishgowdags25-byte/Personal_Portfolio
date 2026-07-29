@@ -47,7 +47,7 @@ export default function CreativeHeroVisual({ splineUrl }) {
   if (splineUrl) {
     return (
       <div 
-        className="w-full h-[500px] md:h-[650px] flex items-center justify-center bg-transparent pointer-events-auto"
+        className="w-full h-[550px] md:h-[750px] flex items-center justify-center bg-transparent pointer-events-auto"
       >
         <SplineErrorBoundary 
           fallback={
@@ -97,7 +97,7 @@ const ImageFallback = ({ mousePos, isHovered, containerRef, onMouseMove, onMouse
       onMouseMove={onMouseMove}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className="relative w-full h-[500px] md:h-[650px] rounded-[32px] overflow-hidden border border-border-custom bg-[#050505] flex items-center justify-center cursor-pointer group select-none"
+      className="relative w-full h-[550px] md:h-[750px] rounded-[32px] overflow-hidden border border-border-custom bg-[#050505] flex items-center justify-center cursor-pointer group select-none"
     >
       {/* Background Grid Pattern */}
       <div 
