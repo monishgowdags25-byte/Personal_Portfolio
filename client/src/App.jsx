@@ -341,7 +341,7 @@ export default function App() {
                 {/* Portrait Image */}
                 <div className="relative w-[85%] h-[75%] rounded-2xl overflow-hidden border border-border-custom bg-black/40">
                   <img 
-                    src="/src/assets/hero.png" 
+                    src="/src/assets/about_avatar.png" 
                     alt="Creative Developer HUD Visual" 
                     className="absolute inset-0 w-full h-full object-cover opacity-70 grayscale group-hover:grayscale-0 transition-all duration-700 pointer-events-none"
                   />
