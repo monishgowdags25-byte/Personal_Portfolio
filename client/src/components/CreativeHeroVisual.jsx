@@ -47,7 +47,7 @@ export default function CreativeHeroVisual({ splineUrl }) {
   if (splineUrl) {
     return (
       <div 
-        className="w-full h-[550px] md:h-[750px] flex items-center justify-center bg-transparent pointer-events-auto"
+        className="w-full h-[550px] md:h-[750px] flex items-center justify-center bg-transparent pointer-events-auto overflow-hidden"
       >
         <SplineErrorBoundary 
           fallback={
@@ -69,7 +69,11 @@ export default function CreativeHeroVisual({ splineUrl }) {
               <span className="text-xs uppercase tracking-widest text-text-secondary animate-pulse">Initializing 3D Space...</span>
             </div>
           }>
-            <Spline scene={splineUrl} className="w-full h-full" />
+            <div className="w-full h-full overflow-hidden relative rounded-[32px] bg-transparent">
+              <div className="w-full h-full scale-[1.06] origin-center">
+                <Spline scene={splineUrl} className="w-full h-full" />
+              </div>
+            </div>
           </Suspense>
         </SplineErrorBoundary>
       </div>
