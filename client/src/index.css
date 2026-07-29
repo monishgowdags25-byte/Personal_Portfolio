@@ -132,3 +132,8 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: 0 0 50px rgba(255, 94, 0, 0.15);
 }
 
+/* Hide Spline watermark logo */
+a[href*="spline.design"] {
+  display: none !important;
+}
+
