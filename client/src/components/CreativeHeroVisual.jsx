@@ -43,38 +43,33 @@ export default function CreativeHeroVisual({ splineUrl }) {
     setMousePos({ x: 0, y: 0 });
   };
 
-  // If a Spline URL is provided, render the interactive 3D scene
+  // If a Spline URL is provided, render the interactive 3D scene borderless
   if (splineUrl) {
     return (
       <div 
-        ref={containerRef}
-        className="relative w-full h-[500px] md:h-[650px] rounded-[32px] overflow-hidden border border-border-custom bg-[#050505] flex items-center justify-center group"
+        className="w-full h-[500px] md:h-[650px] flex items-center justify-center bg-transparent pointer-events-auto"
       >
-        {/* Corner Crosshairs like in the reference design */}
-        <span className="absolute top-4 left-4 z-20 text-[10px] font-mono text-accent/30 font-bold pointer-events-none">+ 01</span>
-        <span className="absolute top-4 right-4 z-20 text-[10px] font-mono text-accent/30 font-bold pointer-events-none">+ 02</span>
-        <span className="absolute bottom-4 left-4 z-20 text-[10px] font-mono text-accent/30 font-bold pointer-events-none">+ 03</span>
-        <span className="absolute bottom-4 right-4 z-20 text-[10px] font-mono text-accent/30 font-bold pointer-events-none">+ 04</span>
-
         <SplineErrorBoundary 
           fallback={
-            <ImageFallback 
-              mousePos={mousePos} 
-              isHovered={isHovered} 
-              containerRef={containerRef}
-              onMouseMove={handleMouseMove}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={handleMouseLeave}
-            />
+            <div className="w-full h-full rounded-[32px] overflow-hidden border border-border-custom bg-[#050505] flex items-center justify-center">
+              <ImageFallback 
+                mousePos={mousePos} 
+                isHovered={isHovered} 
+                containerRef={containerRef}
+                onMouseMove={handleMouseMove}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={handleMouseLeave}
+              />
+            </div>
           }
         >
           <Suspense fallback={
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black gap-4">
+            <div className="flex flex-col items-center justify-center gap-4">
               <div className="w-12 h-12 border-2 border-accent border-t-transparent rounded-full animate-spin" />
               <span className="text-xs uppercase tracking-widest text-text-secondary animate-pulse">Initializing 3D Space...</span>
             </div>
           }>
-            <Spline scene={splineUrl} className="w-full h-full object-cover" />
+            <Spline scene={splineUrl} className="w-full h-full" />
           </Suspense>
         </SplineErrorBoundary>
       </div>
