@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  
+  /* Bind CSS variables to Tailwind v4 colors */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-card: var(--bg-card);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-hover: var(--accent-hover);
+  --color-border-custom: var(--border-color);
+  
+  --shadow-custom: 0 4px 20px -2px var(--shadow-color);
+}
+
+:root {
+  --bg-primary: #000000;       /* Pitch Black */
+  --bg-secondary: #06080A;     /* Deep slate black */
+  --bg-card: #0C0E11;          /* Dark card with subtle navy tint */
+  --text-primary: #F4F4F6;     /* Bright off-white */
+  --text-secondary: #92979E;   /* Muted steel gray */
+  --accent: #00E5FF;           /* Glowing Cyber Cyan */
+  --accent-light: rgba(0, 229, 255, 0.08);
+  --accent-hover: #33EBFF;     /* Brighter cyan on hover */
+  --border-color: #161D24;     /* Navy-gray carbon border */
+  --shadow-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dark mode represents the glowing Neon Orange theme */
+:root.dark {
+  --bg-primary: #000000;       /* Pitch Black */
+  --bg-secondary: #070709;     /* Ultra-dark charcoal gray */
+  --bg-card: #0D0D10;          /* Deep gray-black card */
+  --text-primary: #F4F4F6;     /* Bright off-white */
+  --text-secondary: #929298;   /* Muted platinum gray */
+  --accent: #FF5E00;           /* Radiant premium orange-amber */
+  --accent-light: rgba(255, 94, 0, 0.08);
+  --accent-hover: #FF7724;     /* Brighter orange on hover */
+  --border-color: #1A1A1E;     /* Carbon gray border */
+  --shadow-color: rgba(0, 0, 0, 0.8);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* offset for sticky navbar */
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(13, 13, 16, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Custom styles for animations & layout */
+.bento-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-custom);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* Scrolling ticker animation */
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-33.333%, 0, 0);
+  }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  animation: marquee 25s linear infinite;
+  white-space: nowrap;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Text glow outline for oversized text */
+.text-outline-glow {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 94, 0, 0.12);
+  text-shadow: 0 0 40px rgba(255, 94, 0, 0.05);
+  transition: all 0.5s ease;
+}
+
+.text-outline-glow:hover {
+  -webkit-text-stroke: 1.5px rgba(255, 94, 0, 0.3);
+  text-shadow: 0 0 50px rgba(255, 94, 0, 0.15);
+}
+
