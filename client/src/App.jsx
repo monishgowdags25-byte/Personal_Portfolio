@@ -304,6 +304,53 @@ export default function App() {
               <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase font-display">WHO I AM</span>
             </div>
             <h2 id="about-heading" className="text-2xl sm:text-3xl font-extrabold font-display leading-tight uppercase tracking-tight text-white">About Me</h2>
+            
+            {/* Interactive HUD Portrait Card */}
+            <div className="mt-6 relative w-full h-[380px] rounded-3xl overflow-hidden border border-border-custom bg-[#050505] flex items-center justify-center group select-none shadow-2xl">
+              {/* Background Grid Pattern */}
+              <div 
+                className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                style={{
+                  backgroundImage: `
+                    radial-gradient(circle at 1px 1px, white 1px, transparent 0),
+                    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)
+                  `,
+                  backgroundSize: '16px 16px, 32px 32px, 32px 32px'
+                }}
+              />
+              
+              {/* Corner labels */}
+              <div className="absolute top-4 left-4 z-20 font-mono text-[8px] text-accent font-bold pointer-events-none flex items-center gap-1 opacity-50">
+                <span className="w-1 h-1 rounded-full bg-accent animate-ping" />
+                <span>SYS_STATUS: ACTIVE</span>
+              </div>
+              <div className="absolute top-4 right-4 z-20 font-mono text-[8px] text-text-secondary pointer-events-none opacity-40">
+                LAT: 12.9716° N
+              </div>
+
+              {/* Glowing gradients */}
+              <div className="absolute inset-0 opacity-30 bg-gradient-to-tr from-accent/10 via-transparent to-purple-500/5 blur-xl pointer-events-none" />
+
+              {/* Portrait Image */}
+              <div className="relative w-[85%] h-[75%] rounded-2xl overflow-hidden border border-border-custom bg-black/40">
+                <img 
+                  src="/src/assets/hero.png" 
+                  alt="Creative Developer HUD Visual" 
+                  className="absolute inset-0 w-full h-full object-cover opacity-70 grayscale group-hover:grayscale-0 transition-all duration-700 pointer-events-none"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
+                
+                {/* Floating Bottom Labels */}
+                <div className="absolute bottom-4 left-4 right-4 z-20 flex flex-col gap-0.5">
+                  <span className="text-[9px] tracking-[0.2em] font-extrabold text-accent uppercase font-display">CREATIVE TECHNOLOGY</span>
+                  <h4 className="text-xs font-bold font-display text-white tracking-tight flex items-center gap-1.5">
+                    Interactive Space Ready
+                    <Sparkles size={11} className="text-accent animate-pulse" />
+                  </h4>
+                </div>
+              </div>
+            </div>
           </div>
           
           <div className="md:col-span-8 bento-card p-8 rounded-3xl bg-bg-card border border-border-custom flex flex-col gap-6">
