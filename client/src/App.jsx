@@ -297,79 +297,89 @@ export default function App() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col gap-24">
         
         {/* ABOUT ME SECTION */}
-        <section id="about" aria-labelledby="about-heading" className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          <div className="md:col-span-4">
+        {/* ABOUT ME SECTION */}
+        <section id="about" aria-labelledby="about-heading" className="flex flex-col gap-8">
+          {/* Section Header */}
+          <div>
             <div className="flex items-center gap-2 mb-3">
               <Award size={18} className="text-accent animate-pulse" />
               <span className="text-[10px] font-bold tracking-[0.2em] text-accent uppercase font-display">WHO I AM</span>
             </div>
             <h2 id="about-heading" className="text-2xl sm:text-3xl font-extrabold font-display leading-tight uppercase tracking-tight text-white">About Me</h2>
-            
-            {/* Interactive HUD Portrait Card */}
-            <div className="mt-6 relative w-full h-[380px] rounded-3xl overflow-hidden border border-border-custom bg-[#050505] flex items-center justify-center group select-none shadow-2xl">
-              {/* Background Grid Pattern */}
-              <div 
-                className="absolute inset-0 opacity-[0.03] pointer-events-none"
-                style={{
-                  backgroundImage: `
-                    radial-gradient(circle at 1px 1px, white 1px, transparent 0),
-                    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)
-                  `,
-                  backgroundSize: '16px 16px, 32px 32px, 32px 32px'
-                }}
-              />
-              
-              {/* Corner labels */}
-              <div className="absolute top-4 left-4 z-20 font-mono text-[8px] text-accent font-bold pointer-events-none flex items-center gap-1 opacity-50">
-                <span className="w-1 h-1 rounded-full bg-accent animate-ping" />
-                <span>SYS_STATUS: ACTIVE</span>
-              </div>
-              <div className="absolute top-4 right-4 z-20 font-mono text-[8px] text-text-secondary pointer-events-none opacity-40">
-                LAT: 12.9716° N
-              </div>
-
-              {/* Glowing gradients */}
-              <div className="absolute inset-0 opacity-30 bg-gradient-to-tr from-accent/10 via-transparent to-purple-500/5 blur-xl pointer-events-none" />
-
-              {/* Portrait Image */}
-              <div className="relative w-[85%] h-[75%] rounded-2xl overflow-hidden border border-border-custom bg-black/40">
-                <img 
-                  src="/src/assets/hero.png" 
-                  alt="Creative Developer HUD Visual" 
-                  className="absolute inset-0 w-full h-full object-cover opacity-70 grayscale group-hover:grayscale-0 transition-all duration-700 pointer-events-none"
+          </div>
+          
+          {/* Grid Row aligning the Left Image and Right Text Box */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+            {/* Left: Interactive HUD Portrait Card (span 4) */}
+            <div className="md:col-span-4">
+              <div className="relative w-full h-[380px] rounded-3xl overflow-hidden border border-border-custom bg-[#050505] flex items-center justify-center group select-none shadow-2xl">
+                {/* Background Grid Pattern */}
+                <div 
+                  className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                  style={{
+                    backgroundImage: `
+                      radial-gradient(circle at 1px 1px, white 1px, transparent 0),
+                      linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)
+                    `,
+                    backgroundSize: '16px 16px, 32px 32px, 32px 32px'
+                  }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
                 
-                {/* Floating Bottom Labels */}
-                <div className="absolute bottom-4 left-4 right-4 z-20 flex flex-col gap-0.5">
-                  <span className="text-[9px] tracking-[0.2em] font-extrabold text-accent uppercase font-display">CREATIVE TECHNOLOGY</span>
-                  <h4 className="text-xs font-bold font-display text-white tracking-tight flex items-center gap-1.5">
-                    Interactive Space Ready
-                    <Sparkles size={11} className="text-accent animate-pulse" />
-                  </h4>
+                {/* Corner labels */}
+                <div className="absolute top-4 left-4 z-20 font-mono text-[8px] text-accent font-bold pointer-events-none flex items-center gap-1 opacity-50">
+                  <span className="w-1 h-1 rounded-full bg-accent animate-ping" />
+                  <span>SYS_STATUS: ACTIVE</span>
+                </div>
+                <div className="absolute top-4 right-4 z-20 font-mono text-[8px] text-text-secondary pointer-events-none opacity-40">
+                  LAT: 12.9716° N
+                </div>
+
+                {/* Glowing gradients */}
+                <div className="absolute inset-0 opacity-30 bg-gradient-to-tr from-accent/10 via-transparent to-purple-500/5 blur-xl pointer-events-none" />
+
+                {/* Portrait Image */}
+                <div className="relative w-[85%] h-[75%] rounded-2xl overflow-hidden border border-border-custom bg-black/40">
+                  <img 
+                    src="/src/assets/hero.png" 
+                    alt="Creative Developer HUD Visual" 
+                    className="absolute inset-0 w-full h-full object-cover opacity-70 grayscale group-hover:grayscale-0 transition-all duration-700 pointer-events-none"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
+                  
+                  {/* Floating Bottom Labels */}
+                  <div className="absolute bottom-4 left-4 right-4 z-20 flex flex-col gap-0.5">
+                    <span className="text-[9px] tracking-[0.2em] font-extrabold text-accent uppercase font-display">CREATIVE TECHNOLOGY</span>
+                    <h4 className="text-xs font-bold font-display text-white tracking-tight flex items-center gap-1.5">
+                      Interactive Space Ready
+                      <Sparkles size={11} className="text-accent animate-pulse" />
+                    </h4>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          
-          <div className="md:col-span-8 bento-card p-8 rounded-3xl bg-bg-card border border-border-custom flex flex-col gap-6">
-            <p className="text-sm md:text-base text-text-secondary leading-relaxed font-sans">
-              I am Monish Gowda GS, an aspiring Software Engineer with hands-on experience building web applications, AI-based solutions, and startup-style projects. Currently pursuing my B.E. in Computer Science and Business Systems (CSBS) at PES College of Engineering, Mandya. 
-            </p>
-            <p className="text-sm md:text-base text-text-secondary leading-relaxed font-sans">
-              I focus on combining strong technical programming skills, structural algorithms, and active team collaboration to ship robust and highly impactful software applications. My goal is to build digital products that combine visual elegance with structural integrity.
-            </p>
             
-            {/* Mini highlights */}
-            <div className="grid grid-cols-2 gap-4 mt-4 pt-4 border-t border-border-custom">
-              <div className="flex flex-col">
-                <span className="text-accent font-extrabold text-xl font-display">2027</span>
-                <span className="text-[10px] text-text-secondary font-semibold uppercase tracking-wider mt-1">B.E. Graduation</span>
+            {/* Right: Biography Text Card (span 8) */}
+            <div className="md:col-span-8 bento-card p-8 rounded-3xl bg-bg-card border border-border-custom flex flex-col justify-between min-h-[380px] gap-6">
+              <div>
+                <p className="text-sm md:text-base text-text-secondary leading-relaxed font-sans mb-4">
+                  I am Monish Gowda GS, an aspiring Software Engineer with hands-on experience building web applications, AI-based solutions, and startup-style projects. Currently pursuing my B.E. in Computer Science and Business Systems (CSBS) at PES College of Engineering, Mandya. 
+                </p>
+                <p className="text-sm md:text-base text-text-secondary leading-relaxed font-sans">
+                  I focus on combining strong technical programming skills, structural algorithms, and active team collaboration to ship robust and highly impactful software applications. My goal is to build digital products that combine visual elegance with structural integrity.
+                </p>
               </div>
-              <div className="flex flex-col">
-                <span className="text-accent font-extrabold text-xl font-display">1st</span>
-                <span className="text-[10px] text-text-secondary font-semibold uppercase tracking-wider mt-1">Swiss pairing chess engine</span>
+              
+              {/* Mini highlights */}
+              <div className="grid grid-cols-2 gap-4 mt-2 pt-4 border-t border-border-custom">
+                <div className="flex flex-col">
+                  <span className="text-accent font-extrabold text-xl font-display">2027</span>
+                  <span className="text-[10px] text-text-secondary font-semibold uppercase tracking-wider mt-1">B.E. Graduation</span>
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-accent font-extrabold text-xl font-display">1st</span>
+                  <span className="text-[10px] text-text-secondary font-semibold uppercase tracking-wider mt-1">Swiss pairing chess engine</span>
+                </div>
               </div>
             </div>
           </div>
