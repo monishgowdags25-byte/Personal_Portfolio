@@ -31,7 +31,7 @@ export default function App() {
   // Configuration for future Spline 3D Integration:
   // Simply paste your Spline scene URL here (e.g. "https://prod.spline.design/plycgAGKnhJGuAp1/scene.splinecode")
   // to instantly load the interactive 3D model in the center container.
-  const [splineSceneUrl, setSplineSceneUrl] = useState('https://prod.spline.design/t5-D1IvfIexBI9OL/scene.splinecode');
+  const [splineSceneUrl, setSplineSceneUrl] = useState('https://prod.spline.design/1gsgxTGXpJSgmVEk/scene.splinecode');
 
   // Form state
   const [formData, setFormData] = useState({ name: '', email: '', message: '', website: '' });
